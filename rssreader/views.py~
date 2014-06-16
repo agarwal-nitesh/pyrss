@@ -26,7 +26,7 @@ def rssfetch(request):
       temp["link"]=i["link"].encode("utf-8")
       dat[str(count)]=temp
       count+=1
-    return dict(dat=dat)  
+    return dict(dat=dat, count=count-1)  
     
 @view_config(route_name='html')
 def default(request):

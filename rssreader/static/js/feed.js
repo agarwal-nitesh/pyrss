@@ -10,7 +10,13 @@ window.onload=function(){
       data :{link:feedurl}
     
     }).done(function(data) {
-         $('#result').append(data.dat[0].title);
+         c=0;
+         for(var i=0;i<data.count;i++){
+           $('#result').append(data.dat[i].title);
+           $('#result').append(data.dat[i].link);
+           $('#result').append(data.dat[i].summary);
+           c++;
+         } 
        });
   }
 
