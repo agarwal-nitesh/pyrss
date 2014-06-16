@@ -23,8 +23,7 @@ window.onload=function(){
            sh=colst1+"<a href=\""+data.dat[i].link+"\">"+img+"</a></div>";
            console.log(sh);
            
-           if(i%3==0)
-             $('#result').append("<div class=\"row\" id=\"row"+i+"\">");
+           $('#result').append("<div class=\"row\" id=\"row"+i+"\">");
              
            $('#row'+i).append(colst3+"<b>"+data.dat[i].title+"</b>"+"</div>");
            
@@ -33,14 +32,8 @@ window.onload=function(){
            
            $('#row'+i).append(colst4+data.dat[i].summary+"</div>");
           
-           
-           
            //$('#row'+i).append("<div class=\"col-md-4\">"+data.dat[i].summary+"</div>");
-           
-             
-           
-           if(i%3==0)
-             $('#result').append("</div>");
+           $('#result').append("</div><>");
          } 
        });
   }
