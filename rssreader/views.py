@@ -13,7 +13,7 @@ def my_view(request):
 def root(request):
     return {'project': 'RssReader'}
 
-@view_config(route_name='rssfeed',renderer='json')
+@view_config(route_name='rssfeed',renderer='json',http_cache=0)
 def rssfetch(request):
     link=request.POST['link']
     parseData=feedparser.parse(link)

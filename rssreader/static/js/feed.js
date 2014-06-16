@@ -1,12 +1,12 @@
 window.onload=function(){
-  var sub=document.getElementById("fetchrss");
+  var subo=document.getElementById("fetchrss");
   var feedcontainer=document.getElementById("url");
-  
-  
   $('#fetchrss').submit(function fetchrss(event){
     event.preventDefault();
     $('#result').html("");
     var feedurl=feedcontainer.value;
+    if(feedurl=="")
+      feedurl="http://feeds.bbci.co.uk/news/rss.xml";
     if(feedurl.substring(0,7)==="http://" || feedurl.substring(0,8)==="https://"){}
     else
       feedurl="http://"+feedurl;
