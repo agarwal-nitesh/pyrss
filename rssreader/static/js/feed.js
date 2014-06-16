@@ -10,12 +10,25 @@ window.onload=function(){
       data :{link:feedurl}
     
     }).done(function(data) {
-         c=0;
+
          for(var i=0;i<data.count;i++){
+           if(i%3==0)
+             $('#result').append("<div class=\"row\"");
+             
+           $('#result').append("<div class=\"col-md-4\">");
            $('#result').append(data.dat[i].title);
+           $('#result').append("</div><br />");
+           
+           $('#result').append("<div class=\"col-md-4\">");
            $('#result').append(data.dat[i].link);
-           $('#result').append(data.dat[i].summary);
-           c++;
+           $('#result').append("</div><br />");
+           
+           $('#result').append("<div class=\"col-md-4\">");
+           $('#result').append(data.dat[i].summary); 
+           $('#result').append("</div><br />");
+           
+           if(i%3==0)
+             $('#result').append("</div>");
          } 
        });
   }
