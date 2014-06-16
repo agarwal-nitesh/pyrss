@@ -13,19 +13,14 @@ window.onload=function(){
 
          for(var i=0;i<data.count;i++){
            if(i%3==0)
-             $('#result').append("<div class=\"row\"");
+             $('#result').append("<div class=\"row\" id=\"row"+i+"\">");
              
-           $('#result').append("<div class=\"col-md-4\">");
-           $('#result').append(data.dat[i].title);
-           $('#result').append("</div><br />");
+           $('#row'+i).append("<div class=\"col-md-4\">"+data.dat[i].title+"</div>");
            
-           $('#result').append("<div class=\"col-md-4\">");
-           $('#result').append(data.dat[i].link);
-           $('#result').append("</div><br />");
+           $('#row'+i).append("<div class=\"col-md-4\">"+"<a href=\""+data.dat[i].link+"\">link</a>"+"</div>");
            
-           $('#result').append("<div class=\"col-md-4\">");
-           $('#result').append(data.dat[i].summary); 
-           $('#result').append("</div><br />");
+           $('#row'+i).append("<div class=\"col-md-4\">"+data.dat[i].summary+"</div>");
+             
            
            if(i%3==0)
              $('#result').append("</div>");
