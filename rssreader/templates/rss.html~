@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/jquery.jfeed.pack.js"></script>
@@ -14,10 +15,13 @@
   <body>
     <h1>Get rss feeds</h1>
     <form class="input-group" id="fetchrss">
-      <span class="input-group-addon">http://</span>
-      <input type="text" id="url" class="form-control" placeholder="url" />
-      <button class="btn btn-default" id="sub" type="button">Go!</button>
+      <span class="input-group-addon cus_addon">http://</span>
+      <input type="text" class="form-control" id="url" placeholder="url">
+      <span class="input-group-btn">
+        <button class="btn btn-success" type="submit" id="sub">Go!</button>
+      </span>
     </form>
+    <br />
     <div id="result" />
   </body>
 

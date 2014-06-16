@@ -1,8 +1,11 @@
 window.onload=function(){
-  var sub=document.getElementById("sub");
+  var sub=document.getElementById("fetchrss");
   var feedcontainer=document.getElementById("url");
   
-  sub.onclick=function fetchrss(){
+  
+  $('#fetchrss').submit(function fetchrss(event){
+    event.preventDefault();
+    $('#result').html("");
     var feedurl="http://"+feedcontainer.value;
     $.ajax({
       type:'POST',
@@ -18,7 +21,7 @@ window.onload=function(){
            colst1="<div class=\"col-md-1\">"
            colst2="<div class=\"col-md-2\">";
            colst3="<div class=\"col-md-3\">";
-           colst4="<div class=\"col-md-4\">";
+           colst5="<div class=\"col-md-5\">";
            
            sh=colst1+"<a href=\""+data.dat[i].link+"\">"+img+"</a></div>";
            console.log(sh);
@@ -30,13 +33,14 @@ window.onload=function(){
            
            $('#row'+i).append(sh);
            
-           $('#row'+i).append(colst4+data.dat[i].summary+"</div>");
+           $('#row'+i).append(colst5+data.dat[i].summary+"</div>");
           
            //$('#row'+i).append("<div class=\"col-md-4\">"+data.dat[i].summary+"</div>");
            $('#result').append("</div><br />");
          } 
        });
-  }
+  });
+  
 
 
   
