@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.jfeed.pack.js"></script>
+    <script src="/static/js/feed.js"></script>
+    <title>rss</title>
+  </head>
+  
+  <body>
+    <h1>Get rss feeds</h1>
+    <form class="input-group" id="fetchrss">
+      <span class="input-group-addon">http://</span>
+      <input type="text" id="url" class="form-control" placeholder="url" />
+      <button class="btn btn-default" id="sub" type="button">Go!</button>
+    </form>
+    <div id="result" />
+  </body>
+
+</html>
