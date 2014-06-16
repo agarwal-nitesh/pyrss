@@ -19,11 +19,12 @@ def rssfetch(request):
     parseData=feedparser.parse(link)
     dat={}
     count=0
-    chimg=parseData["channel"]["image"]["link"].encode("utf-8")
+    chimg=""
 
     for i in parseData["items"]:
       temp={}
       try:
+        chimg=parseData["channel"]["image"]["link"].encode("utf-8")
         temp["title"]=i["title"].encode("utf-8")
         temp["summary"]=i["summary"].encode("utf-8")
         temp["link"]=i["link"].encode("utf-8")

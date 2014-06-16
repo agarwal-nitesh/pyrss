@@ -6,7 +6,12 @@ window.onload=function(){
   $('#fetchrss').submit(function fetchrss(event){
     event.preventDefault();
     $('#result').html("");
-    var feedurl="http://"+feedcontainer.value;
+    var feedurl=feedcontainer.value;
+    if(feedurl.substring(0,7)==="http://" || feedurl.substring(0,8)==="https://"){}
+    else
+      feedurl="http://"+feedurl;
+    
+      
     $.ajax({
       type:'POST',
       url:'rssfeed',
@@ -16,15 +21,13 @@ window.onload=function(){
 
          for(var i=0;i<data.count;i++){
          
-           img="<img src=\""+data.dat[i].image+"\" />";
-           console.log(img);
+           img="<img src=\""+data.dat[i].image+"\" onerror=\"this.src=\'/static/img/rss1.gif\' \" alt=\"hello\"/>";
            colst1="<div class=\"col-md-1\">"
            colst2="<div class=\"col-md-2\">";
            colst3="<div class=\"col-md-3\">";
            colst5="<div class=\"col-md-5\">";
            
            sh=colst1+"<a href=\""+data.dat[i].link+"\">"+img+"</a></div>";
-           console.log(sh);
            
            $('#result').append("<div class=\"row\" id=\"row"+i+"\">");
              
@@ -40,9 +43,4 @@ window.onload=function(){
          } 
        });
   });
-  
-
-
-  
 }
-
