@@ -33,7 +33,7 @@ window.onload=function(){
            $('#row'+i).append(colst4+data.dat[i].summary+"</div>");
           
            //$('#row'+i).append("<div class=\"col-md-4\">"+data.dat[i].summary+"</div>");
-           $('#result').append("</div>");
+           $('#result').append("</div><br />");
          } 
        });
   }
