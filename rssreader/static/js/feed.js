@@ -9,7 +9,9 @@ window.onload=function(){
       url:'rssfeed',
       data :{link:feedurl}
     
-    });
+    }).done(function(data) {
+         $('#result').append(data.dat[0].title);
+       });
   }
 
 
